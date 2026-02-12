@@ -13,11 +13,11 @@ data_reduced=pca.fit_transform(data)
 reduced_df=pd.DataFrame(data_reduced,columns=['PC1','PC2'])
 reduced_df['target']=target
 plt.figure(figsize=(10,15))
-colors=['r','g','s']
-for i,target in enumerate(np.unique(target)):
-    plt.scatter(reduced_df[reduced_df['target']==target]['PC1'],reduced_df[reduced_df['target']==target]['PC2'],c=colors[1],label=label_names[i])
-plt.xlabel('PC1')
-plt.ylabel('PC2')
-plt.title('PCA for iris Dataset')
-plt.legend()
-plt.show()
+colors=['r','g','b']
+for i ,target in enumerate(np.unique(target)):
+    plt.scatter(reduced_df[reduced_df['target']==target]['PC1'],reduced_df[reduced_df['target']==target]['PC2'],c=colors[i],label=label_names[i])
+    plt.xlabel('PC1')
+    plt.ylabel('PC2')
+    plt.title('PCA of iris Dataset')
+    plt.legend()
+    plt.show()
